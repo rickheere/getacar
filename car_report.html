@@ -211,6 +211,37 @@
                 display: inline-block;
                 min-width: 44px;
             }
+            
+            /* Optimize score breakdown for mobile */
+            .score-breakdown {
+                padding: 0.5rem;
+                font-size: 0.75rem;
+            }
+            
+            .score-breakdown h4 {
+                font-size: 0.85rem;
+                margin-bottom: 0.4rem;
+            }
+            
+            .score-item {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 0.4rem;
+                padding: 0.3rem 0;
+            }
+            
+            .score-item span:first-child {
+                font-weight: 500;
+                margin-bottom: 0.2rem;
+                margin-right: 0;
+            }
+            
+            .score-item span:last-child {
+                color: inherit;
+                font-weight: normal;
+                text-align: left;
+                flex: none;
+            }
         }
         
         table {
@@ -360,10 +391,23 @@
         
         .score-item {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             margin-bottom: 0.25rem;
             padding: 0.25rem 0;
             flex-wrap: wrap;
+            max-width: 100%;
+        }
+        
+        .score-item span:first-child {
+            flex: 0 0 auto;
+            margin-right: 0.5rem;
+            min-width: 180px;
+        }
+        
+        .score-item span:last-child {
+            flex: 0 1 auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .score-item.positive {
@@ -514,7 +558,7 @@
 <body>
             <div class="header">
             <h1>🚗 Car Analysis Report</h1>
-            <p>Generated on 28.07.2025, 17:21:24</p>
+            <p>Generated on 28.07.2025, 17:31:36</p>
             <div class="stats">
                 <div class="stat">📊 149 Cars Analyzed</div>
                 <div class="stat">💰 Price Range: 11,800 - 30,000 $</div>
